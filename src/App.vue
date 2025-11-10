@@ -6,17 +6,20 @@
     <div class="scanline" aria-hidden="true"></div>
 
     <header class="header">
-      <div class="brand">
-        <span class="terminal">▮</span>
-        <h1 class="glitch-text" data-text="PRIVACIDADE x SEGURANÇA">PRIVACIDADE x SEGURANÇA</h1>
-        <p class="subtitle"> </p>
+      <div class="header-inner">
+        <div class="brand">
+          <span class="terminal">▮</span>
+          <h1 class="glitch-text" data-text="PRIVACIDADE x SEGURANÇA">PRIVACIDADE x SEGURANÇA</h1>
+          <p class="subtitle"> </p>
+        </div>
+        <nav class="nav">
+          <router-link to="/" class="nav-link">[HOME]</router-link>
+          <router-link to="/artigos" class="nav-link">[ARTIGOS]</router-link>
+          <router-link to="/desafio" class="nav-link">[DESAFIO]</router-link>
+          <router-link to="/forum" class="nav-link">[FÓRUM]</router-link>
+          <router-link to="/sobre" class="nav-link">[SOBRE]</router-link>
+        </nav>
       </div>
-      <nav class="nav">
-        <router-link to="/" class="nav-link">[HOME]</router-link>
-        <router-link to="/artigos" class="nav-link">[ARTIGOS]</router-link>
-        <router-link to="/forum" class="nav-link">[FÓRUM]</router-link>
-        <router-link to="/sobre" class="nav-link">[SOBRE]</router-link>
-      </nav>
     </header>
 
     <main class="container">
@@ -31,11 +34,12 @@
 
 <style>
 .site { position: relative; min-height: 100vh; background: #000; color: #00ff7f; }
-.header { position: sticky; top: 0; background: rgba(0,0,0,0.85); border-bottom: 1px solid rgba(0,255,127,0.3); backdrop-filter: blur(6px); }
-.brand { display: flex; align-items: center; gap: 12px; padding: 16px; }
+.header { position: sticky; top: 0; background: rgba(0,0,0,0.85); border-bottom: 1px solid rgba(0,255,127,0.3); backdrop-filter: blur(6px); z-index: 1000; }
+.header-inner { max-width: 980px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; }
+.brand { display: flex; align-items: center; gap: 12px; padding: 16px 0; }
 .terminal { color: #00ff7f; }
 .subtitle { color: #1a3f2e; font-size: 12px; }
-.nav { display: flex; flex-wrap: wrap; gap: 8px; padding: 8px 16px 16px; }
+.nav { display: flex; flex-wrap: wrap; gap: 8px; padding: 8px 0 16px; }
 .nav-link { color: #00ff7f; text-decoration: none; border: 1px solid rgba(0,255,127,0.3); padding: 6px 10px; font-weight: 700; }
 .nav-link:hover { background: #00ff7f; color: #000; }
 

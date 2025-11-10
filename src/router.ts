@@ -1,10 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from './views/Home.vue'
-import Articles from './views/Articles.vue'
-import ArticleDetail from './views/ArticleDetail.vue'
-import About from './views/About.vue'
-import Forum from './views/Forum.vue'
-import ForumTopic from './views/ForumTopic.vue'
+import Home from '@/views/Home.vue'
+import Articles from '@/views/Articles.vue'
+import ArticleDetail from '@/views/ArticleDetail.vue'
+import About from '@/views/About.vue'
+import Forum from '@/views/Forum.vue'
+import ForumTopic from '@/views/ForumTopic.vue'
+import Desafio from '@/views/Desafio.vue'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -13,6 +14,7 @@ const router = createRouter({
     { path: '/artigos', name: 'articles', component: Articles },
     { path: '/artigos/:slug', name: 'article', component: ArticleDetail },
     { path: '/sobre', name: 'about', component: About },
+    { path: '/desafio', name: 'desafio', component: Desafio },
     { path: '/forum', name: 'forum', component: Forum },
     { path: '/forum/:id', name: 'forum-topic', component: ForumTopic },
     { path: '/:pathMatch(.*)*', redirect: '/' },
