@@ -1,0 +1,15 @@
+:root {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  line-height: 1.6;
+  font-weight: 400;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body { margin: 0; background: #000; color: #00ff7f; }
+
+a { color: #00ff7f; }
+a:hover { color: #fff; }
+
+#app { min-height: 100vh; }
