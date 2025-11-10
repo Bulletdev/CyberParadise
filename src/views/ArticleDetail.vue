@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
-import type { FullArticle } from '@/types/article'
+import type { FullArticle } from '../types/article'
 
 const route = useRoute()
 const slug = computed(() => route.params.slug as string)
