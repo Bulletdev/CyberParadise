@@ -40,6 +40,7 @@
 
   <div class="grid">
     <router-link class="nav-link" to="/artigos">[VER ARTIGOS E GUIAS]</router-link>
+    <router-link class="nav-link" to="/desafio">[MISSÃO FUTURO 35]</router-link>
     <router-link class="nav-link" to="/forum">[PARTICIPE DO FÓRUM]</router-link>
     <router-link class="nav-link" to="/sobre">[SOBRE O PROJETO]</router-link>
   </div>
@@ -47,6 +48,9 @@
   <div class="featured mt-8">
     <h3 class="featured-title">Destaques Recentes</h3>
     <ul class="featured-list">
+      <li>
+        <router-link to="/desafio">Missão Futuro 35 — Brasil 2035</router-link>
+      </li>
       <li>
         <router-link to="/artigos/snowden-prism">PRISM: o programa secreto da NSA</router-link>
       </li>
