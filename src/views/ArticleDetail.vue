@@ -1,12 +1,14 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
+import type { FullArticle } from '@/types/article'
 
 const route = useRoute()
 const slug = computed(() => route.params.slug as string)
-const fullArticle = computed(() => content[slug.value] ?? moreContent[slug.value])
+const fallbackArticle: FullArticle = { title: 'Artigo não encontrado', body: ['Verifique o link.'] }
+const fullArticle = computed<FullArticle>(() => content[slug.value] ?? moreContent[slug.value] ?? fallbackArticle)
 
-const content: Record<string, { title: string; body: string[] }> = {
+const content: Record<string, FullArticle> = {
   'snowden-licoes-2035': {
     title: 'Snowden: lições para 2035',
     body: [
@@ -60,7 +62,7 @@ const content: Record<string, { title: string; body: string[] }> = {
 }
 
 // Conteúdos completos por slug (PRISM, MOVEit, Okta, PQC)
-const moreContent: Record<string, { title: string; body: string[]; date?: string; sources?: { label: string; url: string }[] }> = {
+const moreContent: Record<string, FullArticle> = {
   'snowden-prism': {
     title: 'PRISM: o programa secreto da NSA',
     date: '2013-06-06',
@@ -164,8 +166,6 @@ const moreContent: Record<string, { title: string; body: string[]; date?: string
     ]
   }
 }
-
-const article = computed(() => content[slug.value] ?? { title: 'Artigo não encontrado', body: ['Verifique o link.'] })
 </script>
 
 <template>
